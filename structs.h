@@ -22,11 +22,7 @@ struct MBR{
     time_t mbr_fecha_creacion;              //Fecha y Hora 
     int mbr_dsk_signature;                  //Int random que identifica el disco
     char dsk_fit;                           //Fit: Best(b), First(f), Worst(w)
-    particion mbr_partition_1;              //Particion 1
-    particion mbr_partition_2;              //Particion 1
-    particion mbr_partition_3;              //Particion 1
-    particion mbr_partition_4;              //Particion 1
-
+    particion mbr_partition[4];             //Particiones en Array (para más facilidad de acceso)
 };
 
 //********** EBR **********

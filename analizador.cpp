@@ -20,9 +20,9 @@ void ejecutar(std::string &cadena, usuario &sesion, std::vector<disco> &discos){
     });
 
     if(tipo == "mkdisk"){
-        
+        mkdisk(parametros);
     }else if(tipo == "rmdisk"){
-        
+        rmdisk(parametros);
     }else if(tipo == "fdisk"){
         
     }else if(tipo == "mount"){
@@ -76,7 +76,7 @@ void ejecutar(std::string &cadena, usuario &sesion, std::vector<disco> &discos){
     }else if(tipo == "rep"){
         
     }else if(tipo == "execute"){
-        
+        execute(parametros, sesion, discos);
     }else{
         std::cout << "ERROR: El comando ingresado no existe." << std::endl;
     }

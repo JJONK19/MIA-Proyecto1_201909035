@@ -4,6 +4,9 @@
 //Locales
 #include "structs.h"
 #include "lexico.h"
+#include "execute.h"
+#include "mkdisk.h"
+#include "rmdisk.h"
 
 //Librerias
 #include <string>
