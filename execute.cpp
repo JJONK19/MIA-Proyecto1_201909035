@@ -82,9 +82,9 @@ void execute(std::vector<std::string> &parametros, usuario &sesion, std::vector<
         }else if(tipo == "rmdisk"){
             rmdisk(parametros);
         }else if(tipo == "fdisk"){
-            
+            fdisk(parametros);
         }else if(tipo == "mount"){
-            
+            mount(parametros, discos);
         }else if(tipo == "unmount"){
             
         }else if(tipo == "mkfs"){
@@ -132,7 +132,7 @@ void execute(std::vector<std::string> &parametros, usuario &sesion, std::vector<
         }else if(tipo == "loss"){
             
         }else if(tipo == "rep"){
-            
+            rep(parametros, discos);
         }else{
             std::cout << "ERROR: El comando ingresado no existe." << std::endl;
         }        

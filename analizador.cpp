@@ -24,9 +24,9 @@ void ejecutar(std::string &cadena, usuario &sesion, std::vector<disco> &discos){
     }else if(tipo == "rmdisk"){
         rmdisk(parametros);
     }else if(tipo == "fdisk"){
-        
+        fdisk(parametros);
     }else if(tipo == "mount"){
-        
+        mount(parametros, discos);
     }else if(tipo == "unmount"){
         
     }else if(tipo == "mkfs"){
@@ -74,7 +74,7 @@ void ejecutar(std::string &cadena, usuario &sesion, std::vector<disco> &discos){
     }else if(tipo == "loss"){
         
     }else if(tipo == "rep"){
-        
+        rep(parametros, discos);
     }else if(tipo == "execute"){
         execute(parametros, sesion, discos);
     }else{

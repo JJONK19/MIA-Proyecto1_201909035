@@ -1,0 +1,60 @@
+# Archivo de Ejemplo
+#mkdisk
+mkdisk >size=25 >path="/home/jjonk19/Documentos/Ingenieria/Proyectos/MIA/MIA-Proyecto1_201909035/ Mis Discos/Disco1.dsk"
+mkdisk >size=10 >path="/home/jjonk19/Documentos/Ingenieria/Proyectos/MIA/MIA-Proyecto1_201909035/ Mis Discos/Disco1.dsk"
+mkdisk >size=10 >fit=BF >path="/home/jjonk19/Documentos/Ingenieria/Proyectos/MIA/MIA-Proyecto1_201909035/ Mis Discos/Disco2.dsk"
+mkdisk >size=5000 >unit=K >path="/home/jjonk19/Documentos/Ingenieria/Proyectos/MIA/MIA-Proyecto1_201909035/ Mis Discos/Disco3.dsk"
+mkdisk >size=10 >fit=BF >path="/home/jjonk19/Documentos/Ingenieria/Proyectos/MIA/MIA-Proyecto1_201909035/ Mis Discos/Disco4.dsk"
+
+#rmdisk
+rmdisk >PATH="/home/jjonk19/Documentos/Ingenieria/Proyectos/MIA/MIA-Proyecto1_201909035/ Mis Discos/Disco3.dsk"
+rmdisk >PATH="/home/jjonk19/Documentos/Ingenieria/Proyectos/MIA/MIA-Proyecto1_201909035/MisDiscos/Disco3.dsk"
+
+#fdisk
+
+#Crear
+fdisk >size=5 >unit=m  >path="/home/jjonk19/Documentos/Ingenieria/Proyectos/MIA/MIA-Proyecto1_201909035/ Mis Discos/Disco1.dsk" >name=Part1
+fdisk >size=5 >unit=m  >path="/home/jjonk19/Documentos/Ingenieria/Proyectos/MIA/MIA-Proyecto1_201909035/ Mis Discos/Disco1.dsk" >name=Part2
+fdisk >size=9 >unit=m >type=e  >path="/home/jjonk19/Documentos/Ingenieria/Proyectos/MIA/MIA-Proyecto1_201909035/ Mis Discos/Disco1.dsk" >name=Extendida
+fdisk >size=2 >unit=m >type=l >path="/home/jjonk19/Documentos/Ingenieria/Proyectos/MIA/MIA-Proyecto1_201909035/ Mis Discos/Disco1.dsk" >name=Part3
+fdisk >size=2 >unit=m  >type=l >path="/home/jjonk19/Documentos/Ingenieria/Proyectos/MIA/MIA-Proyecto1_201909035/ Mis Discos/Disco1.dsk" >name=Part4
+fdisk >size=2 >unit=m  >type=l >path="/home/jjonk19/Documentos/Ingenieria/Proyectos/MIA/MIA-Proyecto1_201909035/ Mis Discos/Disco1.dsk" >name="Part 5"
+
+fdisk >size=2 >unit=m  >path="/home/jjonk19/Documentos/Ingenieria/Proyectos/MIA/MIA-Proyecto1_201909035/ Mis Discos/Disco2.dsk" >name=Part1
+fdisk >size=2 >unit=m  >path="/home/jjonk19/Documentos/Ingenieria/Proyectos/MIA/MIA-Proyecto1_201909035/ Mis Discos/Disco2.dsk" >name=Part2
+fdisk >size=2 >unit=m  >path="/home/jjonk19/Documentos/Ingenieria/Proyectos/MIA/MIA-Proyecto1_201909035/ Mis Discos/Disco2.dsk" >name=Part3
+
+fdisk >size=9 >unit=m >type=e  >path="/home/jjonk19/Documentos/Ingenieria/Proyectos/MIA/MIA-Proyecto1_201909035/ Mis Discos/Disco4.dsk" >name=Extendida
+fdisk >size=2 >unit=m >type=l >path="/home/jjonk19/Documentos/Ingenieria/Proyectos/MIA/MIA-Proyecto1_201909035/ Mis Discos/Disco4.dsk" >name=Part1
+fdisk >size=2 >unit=m  >type=l >path="/home/jjonk19/Documentos/Ingenieria/Proyectos/MIA/MIA-Proyecto1_201909035/ Mis Discos/Disco4.dsk" >name=Part2
+fdisk >size=2 >unit=m  >type=l >path="/home/jjonk19/Documentos/Ingenieria/Proyectos/MIA/MIA-Proyecto1_201909035/ Mis Discos/Disco4.dsk" >name="Part3"
+
+#Borrar
+fdisk >delete=FULL >path="/home/jjonk19/Documentos/Ingenieria/Proyectos/MIA/MIA-Proyecto1_201909035/ Mis Discos/Disco1.dsk" >name=Part4
+fdisk >delete=FULL >path="/home/jjonk19/Documentos/Ingenieria/Proyectos/MIA/MIA-Proyecto1_201909035/ Mis Discos/Disco1.dsk" >name=Part2
+
+fdisk >delete=FULL >path="/home/jjonk19/Documentos/Ingenieria/Proyectos/MIA/MIA-Proyecto1_201909035/ Mis Discos/Disco2.dsk" >name=Part2
+
+fdisk >delete=FULL >path="/home/jjonk19/Documentos/Ingenieria/Proyectos/MIA/MIA-Proyecto1_201909035/ Mis Discos/Disco4.dsk" >name=Part2
+
+#Modificar
+fdisk >add=1 >unit=m >delete=FULL >path="/home/jjonk19/Documentos/Ingenieria/Proyectos/MIA/MIA-Proyecto1_201909035/ Mis Discos/Disco1.dsk" >name="Part 5"
+
+fdisk >add=1 >unit=m >path="/home/jjonk19/Documentos/Ingenieria/Proyectos/MIA/MIA-Proyecto1_201909035/ Mis Discos/Disco2.dsk" >name=Part3
+
+#Probar fits
+fdisk >size=1 >unit=m >type=e >fit=worstfit >path="/home/jjonk19/Documentos/Ingenieria/Proyectos/MIA/MIA-Proyecto1_201909035/ Mis Discos/Disco2.dsk" >name=Part2
+
+fdisk >size=1 >unit=m >type=l >fit=bestfit >path="/home/jjonk19/Documentos/Ingenieria/Proyectos/MIA/MIA-Proyecto1_201909035/ Mis Discos/Disco4.dsk" >name=Part2
+
+
+#mount
+mount >path="/home/jjonk19/Documentos/Ingenieria/Proyectos/MIA/MIA-Proyecto1_201909035/ Mis Discos/Disco1.dsk" >name=Extendida  
+mount >path="/home/jjonk19/Documentos/Ingenieria/Proyectos/MIA/MIA-Proyecto1_201909035/ Mis Discos/Disco1.dsk" >name=Part1 
+mount >path="/home/jjonk19/Documentos/Ingenieria/Proyectos/MIA/MIA-Proyecto1_201909035/ Mis Discos/Disco1.dsk" >name=Part3
+mount >path="/home/jjonk19/Documentos/Ingenieria/Proyectos/MIA/MIA-Proyecto1_201909035/ Mis Discos/Disco1.dsk" >name="Part 5"
+
+
+#reporte
+rep >id=351Disco1 >path="/home/jjonk19/Documentos/Ingenieria/Proyectos/MIA/MIA-Proyecto1_201909035/ Mis Discos/mbr.pdf" >name=mbr
+rep >id=351Disco1 >path="/home/jjonk19/Documentos/Ingenieria/Proyectos/MIA/MIA-Proyecto1_201909035/ Mis Discos/disk.pdf" >name=disk

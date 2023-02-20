@@ -5,6 +5,10 @@
 #include "lexico.h"
 #include "structs.h"
 #include "mkdisk.h"
+#include "rmdisk.h"
+#include "fdisk.h"
+#include "mount.h"
+#include "rep.h"
 
 //Librerias
 #include <iostream>

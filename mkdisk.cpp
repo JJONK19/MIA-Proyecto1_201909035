@@ -123,8 +123,7 @@ void mkdisk(std::vector<std::string> &parametros){
         std::filesystem::remove(ruta);                   
     }
     catch (...) { 
-        std::cout << "ERROR: Ocurrió un error creando las carpetas." <<std::endl;
-        return;
+        
     }
     
     //CREAR EL ARCHIVO BINARIO (DISCO) Y LLENARLO DE 0s

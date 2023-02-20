@@ -58,8 +58,7 @@ void rmdisk(std::vector<std::string> &parametros){
         std::filesystem::remove(ruta); 
     }
     catch (std::exception& e) { 
-        std::cout << "ERROR: Ocurrió un error al tratar de eliminar el archivo." << std::endl;
-        return;
+        
     }
     std::cout << "MENSAJE: Archivo eliminado correctamente." << std::endl;   
 }

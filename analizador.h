@@ -7,6 +7,9 @@
 #include "execute.h"
 #include "mkdisk.h"
 #include "rmdisk.h"
+#include "fdisk.h"
+#include "mount.h"
+#include "rep.h"
 
 //Librerias
 #include <string>
