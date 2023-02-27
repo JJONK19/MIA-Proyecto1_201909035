@@ -86,13 +86,13 @@ void execute(std::vector<std::string> &parametros, usuario &sesion, std::vector<
         }else if(tipo == "mount"){
             mount(parametros, discos);
         }else if(tipo == "unmount"){
-            
+            unmount(parametros, discos);
         }else if(tipo == "mkfs"){
-            
+            mkfs(parametros, discos);
         }else if(tipo == "login"){
-            
+            login(parametros, discos, sesion);
         }else if(tipo == "logout"){
-            
+            logout(sesion);
         }else if(tipo == "mkgrp"){
             
         }else if(tipo == "rmgrp"){

@@ -164,10 +164,9 @@ void unmount(std::vector<std::string> &parametros, std::vector<disco> &discos){
             std::string imprimir = std::to_string(c_parusadas);
             imprimir.append(". ");
             imprimir.append(discos[i].particiones[j].nombre);
+            std::cout << imprimir << std::endl;
             c_parusadas += 1;
         }
-
-        std::cout << std::endl;
     }
 
 }

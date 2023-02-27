@@ -270,6 +270,7 @@ void mount(std::vector<std::string> &parametros, std::vector<disco> &discos){
     int c_parusadas = 1;
     for(int i = 0; i < discos.size(); i++){
 
+        std::cout << discos[i].particiones.size() << std::endl;
         if(discos[i].particiones.size() == 0){
             continue;
         }
@@ -280,9 +281,8 @@ void mount(std::vector<std::string> &parametros, std::vector<disco> &discos){
             std::string imprimir = std::to_string(c_parusadas);
             imprimir.append(". ");
             imprimir.append(discos[i].particiones[j].nombre);
+            std::cout << imprimir << std::endl;
             c_parusadas += 1;
         }
-
-        std::cout << std::endl;
     }
 }

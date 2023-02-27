@@ -28,13 +28,13 @@ void ejecutar(std::string &cadena, usuario &sesion, std::vector<disco> &discos){
     }else if(tipo == "mount"){
         mount(parametros, discos);
     }else if(tipo == "unmount"){
-        
+        unmount(parametros, discos);
     }else if(tipo == "mkfs"){
-        
+        mkfs(parametros, discos);
     }else if(tipo == "login"){
-        
+        login(parametros, discos, sesion);
     }else if(tipo == "logout"){
-        
+        logout(sesion);
     }else if(tipo == "mkgrp"){
         
     }else if(tipo == "rmgrp"){

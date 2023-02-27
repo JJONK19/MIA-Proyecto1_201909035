@@ -8,6 +8,10 @@
 #include "rmdisk.h"
 #include "fdisk.h"
 #include "mount.h"
+#include "unmount.h"
+#include "login.h"
+#include "logout.h"
+#include "mkfs.h"
 #include "rep.h"
 
 //Librerias
