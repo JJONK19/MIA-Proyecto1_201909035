@@ -36,43 +36,43 @@ void ejecutar(std::string &cadena, usuario &sesion, std::vector<disco> &discos){
     }else if(tipo == "logout"){
         logout(sesion);
     }else if(tipo == "mkgrp"){
-        
+        mkgrp(parametros, discos, sesion);
     }else if(tipo == "rmgrp"){
-        
+        rmgrp(parametros, discos, sesion);
     }else if(tipo == "mkusr"){
-        
+        mkusr(parametros, discos, sesion);
     }else if(tipo == "rmusr"){
-        
-    }else if(tipo == "mkfile"){
-        
-    }else if(tipo == "cat"){
-        
-    }else if(tipo == "remove"){
-        
-    }else if(tipo == "edit"){
-        
-    }else if(tipo == "rename"){
-        
-    }else if(tipo == "mkdir"){
-        
-    }else if(tipo == "copy"){
-        
-    }else if(tipo == "move"){
-        
-    }else if(tipo == "find"){
-        
-    }else if(tipo == "chown"){
-        
-    }else if(tipo == "chgrp"){
-        
+        rmusr(parametros, discos, sesion);
     }else if(tipo == "chmod"){
-        
+        chmod(parametros, discos, sesion);
+    }else if(tipo == "mkfile"){
+        mkfile(parametros, discos, sesion);
+    }else if(tipo == "cat"){
+        cat(parametros, discos, sesion);
+    }else if(tipo == "remove"){
+        remove(parametros, discos, sesion);
+    }else if(tipo == "edit"){
+        edit(parametros, discos, sesion);
+    }else if(tipo == "rename"){
+        rename(parametros, discos, sesion);
+    }else if(tipo == "mkdir"){
+        mkdir(parametros, discos, sesion);
+    }else if(tipo == "copy"){
+        copy(parametros, discos, sesion);
+    }else if(tipo == "move"){
+        move(parametros, discos, sesion);
+    }else if(tipo == "find"){
+        find(parametros, discos, sesion);
+    }else if(tipo == "chown"){
+        chown(parametros, discos, sesion);
+    }else if(tipo == "chgrp"){
+        chgrp(parametros, discos, sesion);
     }else if(tipo == "pause"){
-        
+        pause();
     }else if(tipo == "recovery"){
-        
+        recovery(parametros, discos);
     }else if(tipo == "loss"){
-        
+        loss(parametros, discos);
     }else if(tipo == "rep"){
         rep(parametros, discos);
     }else if(tipo == "execute"){
