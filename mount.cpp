@@ -16,6 +16,8 @@ void mount(std::vector<std::string> &parametros, std::vector<disco> &discos){
     int tamaño;                                //Tamaño de la particion
     std::string discName;                      //Nombre del disco que contiene la particion 
     int posDisco = -1;                        //Determina la posicion del disco en el vector
+    //Nuevo
+    bool extendidaMontada = false;             //Indica si la extendida es la que se va a montar
 
     //COMPROBACIÓN DE PARAMETROS
     for(int i = 1; i < parametros.size(); i++){
@@ -77,14 +79,20 @@ void mount(std::vector<std::string> &parametros, std::vector<disco> &discos){
                 tamaño = temp.part_s;
                 break;
             }else{
-                std::cout << "ERROR: No se puede montar una partición extendida." << std::endl;
-                fclose(archivo);
-                return;
+                //Si no dejan montar extendidas, este es el funcionamiento correcto
+                /*
+                    std::cout << "ERROR: No se puede montar una partición extendida." << std::endl;
+                    fclose(archivo);
+                    return;
+                */
+                posLogica = temp.part_start;
+                tamaño = 0;
+                extendidaMontada = true;
             }
         }
     }
 
-    if(posMBR == -1){
+    if(posMBR == -1 && !extendidaMontada){
         //Buscar la extendida
         for(int i = 0; i < 4; i++){
             particion temp = mbr.mbr_partition[i];
@@ -270,7 +278,6 @@ void mount(std::vector<std::string> &parametros, std::vector<disco> &discos){
     int c_parusadas = 1;
     for(int i = 0; i < discos.size(); i++){
 
-        std::cout << discos[i].particiones.size() << std::endl;
         if(discos[i].particiones.size() == 0){
             continue;
         }

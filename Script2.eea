@@ -43,9 +43,9 @@ fdisk >add=1 >unit=m >delete=FULL >path="/home/jjonk19/Documentos/Ingenieria/Pro
 fdisk >add=1 >unit=m >path="/home/jjonk19/Documentos/Ingenieria/Proyectos/MIA/MIA-Proyecto1_201909035/ Mis Discos/Disco2.dsk" >name=Part3
 
 #Probar fits
-fdisk >size=1 >unit=m >type=e >fit=worstfit >path="/home/jjonk19/Documentos/Ingenieria/Proyectos/MIA/MIA-Proyecto1_201909035/ Mis Discos/Disco2.dsk" >name=Part2
+fdisk >size=1 >unit=m >type=e >fit=wf >path="/home/jjonk19/Documentos/Ingenieria/Proyectos/MIA/MIA-Proyecto1_201909035/ Mis Discos/Disco2.dsk" >name=Part2
 
-fdisk >size=1 >unit=m >type=l >fit=bestfit >path="/home/jjonk19/Documentos/Ingenieria/Proyectos/MIA/MIA-Proyecto1_201909035/ Mis Discos/Disco4.dsk" >name=Part2
+fdisk >size=1 >unit=m >type=l >fit=bf >path="/home/jjonk19/Documentos/Ingenieria/Proyectos/MIA/MIA-Proyecto1_201909035/ Mis Discos/Disco4.dsk" >name=Part2
 
 
 #mount
