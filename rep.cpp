@@ -112,23 +112,23 @@ void rep(std::vector<std::string> &parametros, std::vector<disco> &discos){
     }else if(nombre == "disk"){
         disk(discos, posDisco, ruta);
     }else if(nombre == "inode"){
-        
+        inode(discos, posDisco, posParticion, ruta);
     }else if(nombre == "journaling"){
-        
+        journaling(discos, posDisco, posParticion, ruta);
     }else if(nombre == "block"){
-        
+        block(discos, posDisco, posParticion, ruta);
     }else if(nombre == "bm_inode"){
-        
+        bm_inode(discos, posDisco, posParticion, ruta);
     }else if(nombre == "bm_block"){
-        
+        bm_block(discos, posDisco, posParticion, ruta);
     }else if(nombre == "tree"){
-        
+        tree(discos, posDisco, posParticion, ruta);
     }else if(nombre == "sb"){
-        
+        sb(discos, posDisco, posParticion, ruta);
     }else if(nombre == "file"){
-        
+        file(discos, posDisco, posParticion, ruta, rutaS);
     }else if(nombre == "ls"){
-        
+        ls(discos, posDisco, posParticion, ruta, rutaS);
     }else{
         std::cout << "ERROR: Tipo de reporte invalido." << std::endl;
     }
@@ -684,7 +684,7 @@ void disk(std::vector<disco> &discos, int posDisco, std::string &ruta){
     comando.append("'");
     comando.append(ruta);
     comando.append("'");
-    
+
     //GENERAR EL GRAFO
     system(comando.c_str());
     std::cout << "MENSAJE: Reporte DISKS creado correctamente." << std::endl;
@@ -868,16 +868,14 @@ void sb(std::vector<disco> &discos, int posDisco, int posParticion, std::string 
     outfile << codigo << std::endl;
     outfile.close();
 
-    //REMPLAZAR LA EXTENDION DE LA RUTA   
-    //Basado en: https://www.oreilly.com/library/view/c-cookbook/0596007612/ch10s17.html             
+    //EXTRAER EL TIPO DE FORMATO
     std::string::size_type pos = ruta.rfind('.', ruta.length());
-    std::string png = "png";
-    if (pos != std::string::npos) {
-        ruta.replace(pos+1, png.length(), png);
-    }
+    std::string extension = ruta.substr(pos + 1, ruta.length() - 1);
 
     //CREAR EL COMANDO DOT
-    comando = "dot -Tpng grafo.dot -o";
+    comando = "dot -T";
+    comando.append(extension);
+    comando.append(" grafo.dot -o");
     comando.append("'");
     comando.append(ruta);
     comando.append("'");
@@ -1069,16 +1067,14 @@ void inode(std::vector<disco> &discos, int posDisco, int posParticion, std::stri
     outfile << codigo << std::endl;
     outfile.close();
 
-    //REMPLAZAR LA EXTENDION DE LA RUTA   
-    //Basado en: https://www.oreilly.com/library/view/c-cookbook/0596007612/ch10s17.html             
+    //EXTRAER EL TIPO DE FORMATO
     std::string::size_type pos = ruta.rfind('.', ruta.length());
-    std::string png = "png";
-    if (pos != std::string::npos) {
-        ruta.replace(pos+1, png.length(), png);
-    }
+    std::string extension = ruta.substr(pos + 1, ruta.length() - 1);
 
     //CREAR EL COMANDO DOT
-    comando = "dot -Tpng grafo.dot -o";
+    comando = "dot -T";
+    comando.append(extension);
+    comando.append(" grafo.dot -o");
     comando.append("'");
     comando.append(ruta);
     comando.append("'");
@@ -1246,16 +1242,14 @@ void block(std::vector<disco> &discos, int posDisco, int posParticion, std::stri
     outfile << codigo << std::endl;
     outfile.close();
 
-    //REMPLAZAR LA EXTENDION DE LA RUTA   
-    //Basado en: https://www.oreilly.com/library/view/c-cookbook/0596007612/ch10s17.html             
+    //EXTRAER EL TIPO DE FORMATO
     std::string::size_type pos = ruta.rfind('.', ruta.length());
-    std::string png = "png";
-    if (pos != std::string::npos) {
-        ruta.replace(pos+1, png.length(), png);
-    }
+    std::string extension = ruta.substr(pos + 1, ruta.length() - 1);
 
     //CREAR EL COMANDO DOT
-    comando = "dot -Tpng grafo.dot -o";
+    comando = "dot -T";
+    comando.append(extension);
+    comando.append(" grafo.dot -o");
     comando.append("'");
     comando.append(ruta);
     comando.append("'");
@@ -1426,16 +1420,14 @@ void journaling(std::vector<disco> &discos, int posDisco, int posParticion, std:
     outfile << codigo << std::endl;
     outfile.close();
 
-    //REMPLAZAR LA EXTENDION DE LA RUTA   
-    //Basado en: https://www.oreilly.com/library/view/c-cookbook/0596007612/ch10s17.html             
+    //EXTRAER EL TIPO DE FORMATO
     std::string::size_type pos = ruta.rfind('.', ruta.length());
-    std::string png = "png";
-    if (pos != std::string::npos) {
-        ruta.replace(pos+1, png.length(), png);
-    }
+    std::string extension = ruta.substr(pos + 1, ruta.length() - 1);
 
     //CREAR EL COMANDO DOT
-    comando = "dot -Tpng grafo.dot -o";
+    comando = "dot -T";
+    comando.append(extension);
+    comando.append(" grafo.dot -o");
     comando.append("'");
     comando.append(ruta);
     comando.append("'");
@@ -1652,16 +1644,14 @@ void tree(std::vector<disco> &discos, int posDisco, int posParticion, std::strin
     outfile << codigo << std::endl;
     outfile.close();
 
-    //REMPLAZAR LA EXTENDION DE LA RUTA   
-    //Basado en: https://www.oreilly.com/library/view/c-cookbook/0596007612/ch10s17.html             
+    //EXTRAER EL TIPO DE FORMATO
     std::string::size_type pos = ruta.rfind('.', ruta.length());
-    std::string png = "png";
-    if (pos != std::string::npos) {
-        ruta.replace(pos+1, png.length(), png);
-    }
+    std::string extension = ruta.substr(pos + 1, ruta.length() - 1);
 
     //CREAR EL COMANDO DOT
-    comando = "dot -Tpng grafo.dot -o";
+    comando = "dot -T";
+    comando.append(extension);
+    comando.append(" grafo.dot -o");
     comando.append("'");
     comando.append(ruta);
     comando.append("'");
@@ -3321,16 +3311,14 @@ void ls(std::vector<disco> &discos, int posDisco, int posParticion, std::string 
     outfile << codigo << std::endl;
     outfile.close();
 
-    //REMPLAZAR LA EXTENDION DE LA RUTA   
-    //Basado en: https://www.oreilly.com/library/view/c-cookbook/0596007612/ch10s17.html             
+    //EXTRAER EL TIPO DE FORMATO
     std::string::size_type pos = ruta.rfind('.', ruta.length());
-    std::string png = "png";
-    if (pos != std::string::npos) {
-        ruta.replace(pos+1, png.length(), png);
-    }
+    std::string extension = ruta.substr(pos + 1, ruta.length() - 1);
 
     //CREAR EL COMANDO DOT
-    comando = "dot -Tpng grafo.dot -o";
+    comando = "dot -T";
+    comando.append(extension);
+    comando.append(" grafo.dot -o");
     comando.append("'");
     comando.append(ruta);
     comando.append("'");
